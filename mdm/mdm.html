@@ -1,0 +1,33 @@
+<main style="padding: 10px; line-height: 30px">
+  <h3>简单写个教程</h3>
+  <p>首先按正常流程还原，就是关机长按指纹键直到出现恢复选项</p>
+  <p>然后磁盘工具，抹掉磁盘为 APFS 格式，链接 WIFI 切换到安装，下载系统并按正常流程走到开机</p>
+  <p>这里注意开机之后只要到达语言设置了就不用继续了，长按指纹键关机，10秒左右后再次长按进入恢复选项</p>
+  <br />
+  <p>打开 Safari 输入网址 learnjps.top/mdm，点击下面的按钮复制后关闭 Safari 然后打开终端粘贴</p>
+  <p>最后在终端步骤一直按 Enter 即可，会自动重启开机，默认密码为 1234</p>
+  <p>设置-用户和群组-添加管理员用户-设置你自己的用户和密码-然后锁定屏幕-点击头像切换你自己的账户-再进入用户和群组-删除脚本默认创建的用户和群组即可</p>
+  <p></p>
+  <header>
+    其实核心就是下面这段脚本，也可以手敲但太麻烦了 点击下面按钮复制
+    <p style="margin:20px 0; padding: 10; border-radius: 5px;background: #eee;">
+      curl https://raw.githubusercontent.com/learnjps/mdm/main/mdm.sh -o mdm.sh && chmod +x ./mdm.sh && ./mdm.sh
+    </p>
+    <button
+      style="outline-width: 0;outline-color: transparent;border: none; padding: 10;border-radius: 5px; background: #000 ; color: #fff"
+      onClick="copy()">
+      点击复制
+    </button>
+  </header>
+</main>
+
+<script>
+  const copy = () => {
+    navigator.clipboard.writeText("curl https://raw.githubusercontent.com/learnjps/mdm/main/mdm.sh -o mdm.sh && chmod +x ./mdm.sh && ./mdm.sh").then(() => {
+      alert("复制成功，关闭 Safari 并打开终端粘贴即可")
+    }, () => {
+      alert("复制失败，尝试手敲")
+    });
+
+  }
+</script>
